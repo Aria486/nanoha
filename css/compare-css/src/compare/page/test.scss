@@ -1,0 +1,13 @@
+$buttonWidth: 100px;
+$buttonWidth: 80px !default;
+
+.button {
+  width: $buttonWidth;
+  height: 30px;
+  background: {
+    color: aqua;
+  };
+  border: {
+    color: rgba(255,255,255,255);
+  }
+}
