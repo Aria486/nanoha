@@ -1,13 +1,48 @@
+@import '../../assets/common.scss';
+
 $buttonWidth: 100px;
 $buttonWidth: 80px !default;
 
+$btnBackgroundColor: null;
+$btnBackgroundColor: #61dafb !default;
+
+%commonBtnStyle {
+  background: $btnBackgroundColor;
+  outline: none;
+  @include color(yellow);
+  border: {
+    radius: 4px;
+    color: black;
+  }
+
+  &:hover {
+    background: aqua;
+    cursor: pointer;
+  }
+
+  &:active {
+    background: aqua;
+  }
+}
+
 .button {
+  @extend %commonBtnStyle;
+  $btnColor: green !global ;
   width: $buttonWidth;
   height: 30px;
-  background: {
-    color: aqua;
-  };
   border: {
-    color: rgba(255,255,255,255);
+    color: #010203 * 2;
   }
+}
+
+.btnColor {
+  color: $btnColor;
+}
+
+.linkStyle {
+  @include link;
+}
+
+.linkGoogleStyle {
+  @include linkDIY(green, yellow, pink, blue);
 }

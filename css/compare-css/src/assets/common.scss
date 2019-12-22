@@ -1,0 +1,31 @@
+@mixin link {
+  color: blue;
+
+  &:visited {
+    color: purple;
+  }
+  &:hover {
+    color: palevioletred;
+  }
+  &:active {
+    color: red;
+  }
+}
+
+@mixin linkDIY($defaultColor: red, $visColor: blue, $hoverColor: green, $actColor: yellow) {
+  color: $defaultColor;
+
+  &:visited {
+    color: $visColor;
+  }
+  &:hover {
+    color: $hoverColor;
+  }
+  &:active {
+    color: red;
+  }
+}
+
+@mixin color($defaultColor) {
+  color: $defaultColor;
+}
