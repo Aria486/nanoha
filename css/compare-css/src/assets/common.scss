@@ -14,7 +14,6 @@
 
 @mixin linkDIY($defaultColor: red, $visColor: blue, $hoverColor: green, $actColor: yellow) {
   color: $defaultColor;
-
   &:visited {
     color: $visColor;
   }
