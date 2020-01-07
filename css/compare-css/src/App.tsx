@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import ImportScss from './compare/page/ImportScss';
 import TestDemo from './compare/page/TestDemo';
 import './App.css';

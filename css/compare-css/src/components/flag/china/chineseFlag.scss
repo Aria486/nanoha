@@ -1,0 +1,110 @@
+@mixin starPosition ($trant: null, $tranl: null, $scale: null, $rotate: 0deg) {
+  @if $trant == null {
+    -webkit-transform: rotate($rotate);
+    -moz-transform: rotate($rotate);
+    -ms-transform: rotate($rotate);
+    -o-transform: rotate($rotate);
+    transform: rotate($rotate);
+  } @else {
+    -webkit-transform: translate($trant, $tranl) scale($scale) rotate($rotate);
+    -moz-transform: translate($trant, $tranl) scale($scale) rotate($rotate);
+    -ms-transform: translate($trant, $tranl) scale($scale) rotate($rotate);
+    -o-transform: translate($trant, $tranl) scale($scale) rotate($rotate);
+    transform: translate($trant, $tranl) scale($scale) rotate($rotate);
+  }
+}
+
+.flag {
+  margin: 4vw auto;
+  width: 51.2vw;
+  height: 34.1vw;
+  background: #f00;
+}
+
+.flag-star,
+.flag-star::before,
+.flag-star::after {
+  width: 0;
+  height: 0;
+  border-right: 5.0vw solid transparent;
+  border-left: 5.0vw solid transparent;
+  border-top: 3.5vw solid #ffff00;
+}
+
+.flag-star {
+  position: relative;
+}
+
+.flag-star::after,
+.flag-star::before {
+  position: absolute;
+  content: '';
+  top: -3.5vw;
+  left: -5vw;
+}
+
+.flag-star::after {
+  @include starPosition(null, null, null, 70.5deg);
+  //-webkit-transform: rotate(70.5deg);
+  //-moz-transform: rotate(70.5deg);
+  //-ms-transform: rotate(70.5deg);
+  //-o-transform: rotate(70.5deg);
+  //transform: rotate(70.5deg);
+}
+
+.flag-star::before {
+  @include starPosition(null, null, null, -70.5deg);
+  //-webkit-transform: rotate(-70.5deg);
+  //-moz-transform: rotate(-70.5deg);
+  //-ms-transform: rotate(-70.5deg);
+  //-o-transform: rotate(-70.5deg);
+  //transform: rotate(-70.5deg);
+}
+
+.flag-star:nth-child(1) {
+  @include starPosition(3.5vw, 7vw, .9, 0deg);
+  //-webkit-transform: translate(3.5vw, 7vw) scale(.9);
+  //-moz-transform: translate(3.5vw, 7vw) scale(.9);
+  //-ms-transform: translate(3.5vw, 7vw) scale(.9);
+  //-o-transform: translate(3.5vw, 7vw) scale(.9);
+  //transform: translate(3.5vw, 7vw) scale(.9);
+}
+
+.flag-star:nth-child(2) {
+  @include starPosition(11vw, -2vw, .33, -45deg);
+  //-webkit-transform: translate(11vw, -2vw) scale(.33) rotate(-45deg);
+  //-moz-transform: translate(11vw, -2vw) scale(.33) rotate(-45deg);
+  //-ms-transform: translate(11vw, -2vw) scale(.33) rotate(-45deg);
+  //-o-transform: translate(11vw, -2vw) scale(.33) rotate(-45deg);
+  //transform: translate(11vw, -2vw) scale(.33) rotate(-45deg);
+}
+
+.flag-star:nth-child(3) {
+  @include starPosition(15vw, -2vw, .33, 45deg);
+  //-webkit-transform: translate(15vw, -2vw) scale(.33) rotate(45deg);
+  //-moz-transform: translate(15vw, -2vw) scale(.33) rotate(45deg);
+  //-ms-transform: translate(15vw, -2vw) scale(.33) rotate(45deg);
+  //-o-transform: translate(15vw, -2vw) scale(.33) rotate(45deg);
+  //transform: translate(15vw, -2vw) scale(.33) rotate(45deg);
+}
+
+.flag-star:nth-child(4) {
+  @include starPosition(15vw, 0vw, .33, 0deg);
+  //@include starPosition2("translate(#{15}vw,#{0}px)", "scale(#{.33})");
+  //@include starPosition2(translate(15vw, 0px), scale(.33));
+  //-webkit-transform: translate(15vw, 0px) scale(.33);
+  //-moz-transform: translate(15vw, 0px) scale(.33);
+  //-ms-transform: translate(15vw, 0px) scale(.33);
+  //-o-transform: translate(15vw, 0px) scale(.33);
+  //transform: translate(15vw, 0px) scale(.33);
+}
+
+.flag-star:nth-child(5) {
+  @include starPosition(11vw, 0vw, .33, -45deg);
+  //-webkit-transform: translate(11vw,0px) scale(.33) rotate(-45deg);
+  //-moz-transform: translate(11vw,0px) scale(.33) rotate(-45deg);
+  //-ms-transform: translate(11vw,0px) scale(.33) rotate(-45deg);
+  //-o-transform: translate(11vw,0px) scale(.33) rotate(-45deg);
+  //transform: translate(11vw,0px) scale(.33) rotate(-45deg);
+  /*-webkit-transform: matrix(.33, 0, 0, .33, 100, 0);*/
+}

@@ -7,7 +7,7 @@
 import A from './A.js'
 import B from './B.js'
 
-/* A.css */
+/* a.css */
 .title {
   color: red;
 }
@@ -310,6 +310,41 @@ export default () => {
 很明显，除了解决全局污染，其他的用法都不如sass/less便利
 
 scss + modules 解决大部分问题
+
+### BEM（Block Element Modifier）
+
+- Block：逻辑和页面功能都独立的页面组件，是一个可复用单元，特点如下：
+  - 可以随意嵌套组合
+  - 可以放在任意页面的任何位置，不影响功能和外观
+  - 可复用，界面可以有任意多个相同Block的实例
+- Element：Block的组成部分，依赖Block存在（出了Block就不能用）
+- Modifier(修饰符):  是一个元素的状态显示，例如active、current、selected
+
+\- 中划线 ：仅作为连字符使用，表示某个块或者某个子元素的多单词之间的连接记号。
+
+__ 双下划线：双下划线用来连接块和块的子元素。
+
+_ 单下划线：单下划线用来描述一个块或者块的子元素的一种状态。
+
+```html
+<form class="form form--theme-xmas form--simple">
+  <input class="form__input" type="text" />
+  <input
+    class="form__submit form__submit--disabled"
+    type="submit" />
+</form>
+```
+
+```css
+.form { }
+.form--theme-xmas { }
+.form--simple { }
+.form__input { }
+.form__submit { }
+.form__submit--disabled { }
+```
+
+
 
 ## 3. css
 
