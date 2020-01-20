@@ -117,3 +117,9 @@ sudo scp -r root@10.10.3.82:/opt/mongodb/backup /opt/mongodb/backup/
 mongorestore -u da -p jcomdevdb --authenticationDatabase admin -d 3cf13466 /opt/mongodb/backup/backup/3cf13466
 
 db.auth("da", "jcomdevdb")
+
+```
+db.addUser({user:'da',pwd:'admin',roles:["read"]})
+```
+
+db.addUser({user: "da", pwd: "jcomdevdb", role:["readWrite", "dbAdmin"]);

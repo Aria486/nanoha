@@ -1,6 +1,6 @@
 /* eslint-disable import/first */
 import * as React from 'react';
-import ChineseFlag from '../components/flag/china/ChineseFlag';
+import ChineseFlag from '../components/Flag/China';
 
 export default {
   title: 'flag',
