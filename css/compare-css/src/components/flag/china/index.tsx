@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './chineseFlag.scss';
+import './index.scss';
 
 interface Props {
   width: number;
