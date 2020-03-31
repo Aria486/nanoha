@@ -1,0 +1,49 @@
+@import '../../assets/common';
+
+$buttonWidth: 100px;
+$buttonWidth: 80px !default;
+
+$btnBackgroundColor: null;
+$btnBackgroundColor: #61dafb !default;
+
+%commonBtnStyle {
+  background: $btnBackgroundColor;
+  outline: none;
+  font: {
+    size: 16px;
+    weight: 500;
+  }
+  @include color(white);
+  border: {
+    radius: 4px;
+    color: rgba(255, 255, 255, 0);
+  }
+
+  &:hover {
+    background: aqua;
+    cursor: pointer;
+  }
+
+  &:active {
+    background: aqua;
+  }
+}
+
+.button {
+  @extend %commonBtnStyle;
+  $btnColor: green !global ;
+  width: $buttonWidth;
+  height: 30px;
+}
+
+.btnColor {
+  color: $btnColor;
+}
+
+.linkStyle {
+  @include link;
+}
+
+.linkGoogleStyle {
+  @include linkDIY(green, yellow, pink, blue);
+}

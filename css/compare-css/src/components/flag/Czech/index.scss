@@ -1,0 +1,24 @@
+.flag_czech {
+  border: 1px solid black;
+}
+.flag_czech > .flag__part {
+  position: absolute;
+}
+.flag_czech > .flag__part_white {
+  height: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.flag_czech > .flag__part_red {
+  height: 50%;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  background-color: red;
+}
+.flag_czech > .flag__part_blue {
+  border-top:  75px solid transparent;
+  border-bottom: 75px solid transparent;
+  border-left: 150px solid blue;	 
+}

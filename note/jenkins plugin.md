@@ -1,2 +1,38 @@
 **Publish HTML reports**
 
+
+
+{ __v: 0,
+  _id: 5d84261eeb4a2ba21d009aa9,
+  groupId: '5bf249578c0fcdb8035a46a0',
+  index: 6,
+  serviceType: 'electricity',
+  updatedBy: { _id: 5bf24e0324320cab7132646e, name: 'TEST-CC' },
+  updatedAt: 2020-03-09T06:45:27.721Z,
+  createdAt: 2020-03-04T07:14:14.691Z,
+  valid: 1,
+  categories: 
+   [ { isRequired: false,
+       createOrder: '1568941598860',
+       publish: '1',
+       name: '全条件',
+       _id: 5d84261ef6214f3cfd566c8a,
+       questions: [Array] },
+     { isRequired: false,
+       createOrder: '1568941598860',
+       publish: '1',
+       name: '全条件2',
+       _id: 5d84261ef6214f3cfd566c8d,
+       questions: [Array] },
+     { isRequired: false,
+       createOrder: '1568941598860',
+       publish: '0',
+       name: '全非公開',
+       _id: 5d84261ef6214f3cfd566c8f,
+       questions: [Array] },
+     { isRequired: false,
+       createOrder: '1568941598860',
+       publish: '1',
+       name: '全項目非公開',
+       _id: 5d84261ef6214f3cfd566c91,
+       questions: [Array] } ] }

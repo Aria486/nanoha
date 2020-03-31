@@ -12,7 +12,11 @@ export default {
 export const loading = () => 
   <Loading
     loadState={boolean("loadState set", true)}
-    style={{borderColor: text("borderColor set", "blue")}}
+    cusStyle={{
+      borderColor: text("borderColor set", "red"),
+      width: text("width set", "60px"),
+      height: text("height set", "60px")
+    }}
   />;
 
 

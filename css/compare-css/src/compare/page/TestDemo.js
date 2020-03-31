@@ -1,11 +1,10 @@
 import React from 'react';
+import { Button } from 'antd';
 
 function TestDemo() {
   return (
       <div>
-        <button className="button" >
-          TestDemo
-        </button>
+        <Button>sssss</Button>
       </div>
   );
 }

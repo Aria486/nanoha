@@ -1,0 +1,56 @@
+.flag_USA {
+  background-color: red;
+}
+.flag_USA > .flag__part {
+   position: absolute;
+}
+.flag_USA > .flag__part_blue {
+  width: 40%;
+  height:53.85%;
+  background-color: blue;
+  
+}
+.flag_USA > .flag__part_white_0 {
+  
+  width: 100%;  
+  height:7.69%;
+  top: 7.69%;
+  background-color: white;
+}
+.flag_USA > .flag__part_white_1 {
+  width: 100%;  
+  height:7.69%;
+  top: 23.07%;
+  background-color: white;
+}
+.flag_USA > .flag__part_white_2 {
+  width: 100%;  
+  height:7.69%;
+  top: 38.45%;
+  background-color: white;
+}
+.flag_USA > .flag__part_white_3 {
+  width: 100%;  
+  height:7.69%;
+  top: 53.83%;
+  background-color: white;
+}
+.flag_USA > .flag__part_white_4 {
+  width: 100%;  
+  height:7.69%;
+  top: 69.21%;
+  background-color: white;
+}
+.flag_USA > .flag__part_white_5 {
+  width: 100%;  
+  height:7.69%;
+  top: 84.59%;
+  background-color: white;
+}
+
+.flag_USA > .flag__part_star {
+  width: 20px;  
+  height: 20px;
+  top: 0;
+  background-color: green;
+}

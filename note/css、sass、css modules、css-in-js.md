@@ -1,4 +1,4 @@
-## 1. css存在的问题
+## 一. css存在的问题
 
 ① 全局污染
 
@@ -62,9 +62,35 @@ import B from './B.js'
 }
 ```
 
-## 2. 解决方案
+## 二. 解决方案
 
-### css预处理器 SASS/LESS
+### 1. BEM（Block Element Modifier）
+
+- Block：逻辑和页面功能都独立的页面组件，是一个可复用单元，特点如下：
+  - 可以随意嵌套组合
+  - 可以放在任意页面的任何位置，不影响功能和外观
+  - 可复用，界面可以有任意多个相同Block的实例
+- Element：Block的组成部分，依赖Block存在
+- Modifier(修饰符):  是一个元素的状态显示，代表 .block 的不同状态或不同版本。例如active、current、selected
+
+\- 中划线 ：仅作为连字符使用，表示某个块或者某个子元素的多单词之间的连接记号。
+
+__ 双下划线：双下划线用来连接块和块的子元素。
+
+_ 单下划线：单下划线用来描述一个块或者块的子元素的一种状态。
+
+```html
+<div class="article">
+    <div class="article__top-body">
+        <button class="article__button--primary"></button>
+        <button class="article__button--success"></button>
+    </div>
+</div>
+
+// 嵌套层次过深 命名需谨慎 需要团队成员极其配合
+```
+
+### 2. css预处理器 SASS/LESS
 
 Sass 是一款强化 CSS 的辅助工具，它在 CSS 语法的基础上增加了变量 (variables)、嵌套 (nested rules)、混合 (mixins)、导入 (inline imports) 等高级功能，这些拓展令 CSS 更加强大与优雅。使用 Sass 以及 Sass 的样式库（如 [Compass](http://compass-style.org/)）有助于更好地组织管理样式文件，以及更高效地开发项目。
 
@@ -78,7 +104,17 @@ Sass 是一款强化 CSS 的辅助工具，它在 CSS 语法的基础上增加�
 
 让编写CSS更加编程化，更加灵活
 
-- ####详细：
+### sass： Ruby Sass 与 LibSass 
+
+最开始，`Sass` 是由 `Ruby` 编写的，只要本地运行了 `Ruby`，安装了 `Sass`，运行了编译器，就可以使用 `Sass` 所有的功能跟特性了。但是！只要脱离了 `Ruby` 环境， `Ruby Sass` 就无法运行了，Ruby Sass的实现语言是高级语言Ruby，更容易迭代，但存在运行速度慢，不易安装的缺点
+
+`LibSass` 是 Sass引擎的一套 `C/C++` 接口实现，它不依赖 `Ruby` 环境就可以把`sass` 编译成 `css`，因此它能够被集成到其他语言中去。
+
+`LibSass`自己本身不做任何事，它只是一个库，为了能让它工作，需要一个包装器（或者是接口实现）来运行这个库，同时来编译样式表。这其中最常用的 LibSass 几个包装器分别是SassC,node-sass, grunt-sass，LibSass虽然速度快，但它的开发语言是C/C++，迭代速度慢，无法快速地添加各种功能。
+
+Dart Sass
+
+### · 详细：
 
 ① 变量
 
@@ -232,7 +268,7 @@ a {
 
 ……以上并没有解决全局污染问题，编译之后通常还是一个CSS文件
 
-### CSS modules
+### 3. CSS modules
 
 - #### 解决了CSS以下痛点：
 
@@ -311,36 +347,52 @@ export default () => {
 
 scss + modules 解决大部分问题
 
-### BEM（Block Element Modifier）
+### 4. css-in-js
 
-- Block：逻辑和页面功能都独立的页面组件，是一个可复用单元，特点如下：
-  - 可以随意嵌套组合
-  - 可以放在任意页面的任何位置，不影响功能和外观
-  - 可复用，界面可以有任意多个相同Block的实例
-- Element：Block的组成部分，依赖Block存在
-- Modifier(修饰符):  是一个元素的状态显示，代表 .block 的不同状态或不同版本。例如active、current、selected
-
-\- 中划线 ：仅作为连字符使用，表示某个块或者某个子元素的多单词之间的连接记号。
-
-__ 双下划线：双下划线用来连接块和块的子元素。
-
-_ 单下划线：单下划线用来描述一个块或者块的子元素的一种状态。
+前端传统：HTML、CSS、JavaScript 应该各司其职，进行分离
 
 ```html
-<div class="article">
-    <div class="article__body">
-        <div class="tag"></div>
-        <button class="article__button--primary"></button>
-        <button class="article__button--success"></button>
-    </div>
-</div>
+// 最原始的css-in-js
+<style>
+ .jss-xxx-green{
+   color: green
+ }
+</style>
+<span class='jss-xxx-green'>inline style</span>
 ```
 
-## 3. css
 
-- 引入了变量
-- 近年来加入了各种布局，flex，grid，相对于使用第三方来说，更加便利
-- 学习成本低
+
+react： 提倡组件化方案，形成了将HTML、CSS、JavaScript集中编写管理的方式
+
+```javascript
+const Widget = () => {
+  <div style={{
+      color: 'white',
+      fontSize: '12px'
+  }} onClick={() => doSometing()}>
+    text  
+  </div>
+}
+// react中的style仅仅是简单的Object，不支持复杂的嵌套、选择器等特性，使用起来很不方便,因此，便出现了大量的三方库来进行拓展，这些库统称为css-in-js
+```
+
+三方库：
+
+- Styled Components
+- [JSS-React](https://github.com/cssinjs/react-jss)
+- [Glamorous](https://glamorous.rocks/)
+- Radium (Caveat: Uses Inline Styles)
+- Aphrodite
+- Styletron
+
+Styled Components：
+
+className 语义化更轻松
+
+支持：嵌套、前缀自动补全、各类选择器、媒体查询、自定义主题
+
+脱离js逻辑控制，可获取props
 
 
 
